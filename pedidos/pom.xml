@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.alurafood</groupId>
-	<artifactId>pagamentos</artifactId>
+	<artifactId>pedidos</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>pagamentos</name>
-	<description>MS de Pagamentos da Alura Food</description>
+	<name>pedidos</name>
+	<description>MS de Pedidos do Alura Food</description>
 	<properties>
 		<java.version>17</java.version>
 		<spring-cloud.version>2023.0.0</spring-cloud.version>
