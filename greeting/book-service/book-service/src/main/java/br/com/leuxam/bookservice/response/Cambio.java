@@ -1,43 +1,20 @@
-package br.com.leuxam.cambioservice.model;
+package br.com.leuxam.bookservice.response;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Objects;
 
-import jakarta.annotation.Generated;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
-
-@Entity(name = "cambio")
 public class Cambio implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@Column(name = "from_currency", nullable = false, length = 3)
 	private String from;
-	
-	@Column(name = "to_currency", nullable = false, length = 3)
 	private String to;
-	
-	@Column(nullable = false)
-	private BigDecimal conversionFactor;
-	
-	@Transient
-	private BigDecimal convertedValue;
-	
-	@Transient
+	private Double conversionFactor;
+	private Double convertedValue;
 	private String environment;
 	
-	public Cambio(Long id, String from, String to, BigDecimal conversionFactor, BigDecimal convertedValue,
+	public Cambio(Long id, String from, String to, Double conversionFactor, Double convertedValue,
 			String environment) {
 		this.id = id;
 		this.from = from;
@@ -75,19 +52,19 @@ public class Cambio implements Serializable{
 	}
 
 
-	public BigDecimal getConversionFactor() {
+	public Double getConversionFactor() {
 		return conversionFactor;
 	}
 
-	public void setConversionFactor(BigDecimal conversionFactor) {
+	public void setConversionFactor(Double conversionFactor) {
 		this.conversionFactor = conversionFactor;
 	}
 
-	public BigDecimal getConvertedValue() {
+	public Double getConvertedValue() {
 		return convertedValue;
 	}
 
-	public void setConvertedValue(BigDecimal convertedValue) {
+	public void setConvertedValue(Double convertedValue) {
 		this.convertedValue = convertedValue;
 	}
 
