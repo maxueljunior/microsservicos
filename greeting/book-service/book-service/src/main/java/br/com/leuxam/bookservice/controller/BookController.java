@@ -14,7 +14,10 @@ import br.com.leuxam.bookservice.model.Book;
 import br.com.leuxam.bookservice.proxy.CambioProxy;
 import br.com.leuxam.bookservice.repository.BookRepository;
 import br.com.leuxam.bookservice.response.Cambio;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
+@Tag(name = "Book endpoint")
 @RestController
 @RequestMapping("book-service")
 public class BookController {
@@ -28,6 +31,7 @@ public class BookController {
 	@Autowired
 	private CambioProxy proxy;
 	
+	@Operation(summary = "Find a specific book by your ID")
 	@GetMapping("/{id}/{currency}")
 	public Book findBook(
 			@PathVariable("id") Long id,
