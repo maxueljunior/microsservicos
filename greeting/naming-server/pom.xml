@@ -48,12 +48,28 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
+	
+	<repositories>
+	    <repository>
+	        <id>central</id>
+	        <url>https://repo1.maven.org/maven2</url>
+	    </repository>
+	</repositories>
+	
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<image>
+						<name>maxuelt123/${project.artifactId}:${project.version}</name>
+			            <env>
+			                <BP_JVM_VERSION>${java.version}</BP_JVM_VERSION>
+			            </env>
+					</image>
+					<pullPolicy>IF_NOT_PRESENT</pullPolicy>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

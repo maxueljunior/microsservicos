@@ -19,7 +19,6 @@ resilience4j:
       default:
         max-attempts: 5
         wait-duration: 1s
-        enable-exponetial-backoff: true
 spring:
   application:
     name: book-service
